@@ -1,0 +1,150 @@
+/* made the hard way by Sarah Meng with whole lot of searching, trial, and error (sweat, blood, and tears, respectively; too bad "trial, searching, and error" sounds strange) */
+
+/* font sizes for ref:
+ * h1 - 2rem
+ * h2 - 1.5rem
+ * h3 - 1.25rem
+ * nav - 1.2rem
+ * body - 1rem
+ */
+
+/* if I can't have Consolas (on devices that don't have MS Office installed), then sure, I guess I'll have Inconsolata */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+/* background and body stuff */
+
+body {
+    background-color: #fafafa; /* fallback */
+    background: linear-gradient(to bottom, #fafafa 0%, #fafafa 75%, #ddd 100%) fixed;
+    font-family: 'Segoe UI', Calibri, sans-serif;
+    margin: 0; /* to make nav and hr touch page sides */
+}
+
+main {
+    padding: 0 1rem;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 0 1rem;
+}
+
+/* top/important stuff (header, nav, headings, etc) */
+
+header {
+    text-align: center;
+}
+
+header * {
+    margin: 0;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Consolas, Inconsolata, sans-serif; /* no, I don't want just any monospace, huff huff */
+    font-size-adjust: 0.50; /* only Firefox right now; Inconsolata is smaller than Consolas and it bothers me */
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+} /* currently unused */
+
+nav {
+    /* centered nav elements with only nav and a */
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    
+    /* styling */
+    line-height: 2;
+    background-color: #ddd;
+    font-family: Consolas, Inconsolata, sans-serif; /* no, I don't want just any monospace, huff huff */
+    font-size-adjust: 0.50; /* only Firefox right now; Inconsolata is smaller than Consolas and it bothers me */
+    font-size: 0; /* make spaces between links due to usage of only nav and a tags nonexistent */
+}
+
+nav a {
+    /* centered nav elements with only nav and a, no lists */
+    padding: 0;
+    
+    /* styling */
+    display: inline-block;
+    min-width: 9rem;
+    margin: 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* bottom stuff (footer) */
+
+footer {
+    
+}
+
+/* general styling stuff */
+
+a {
+    color: #a00;
+    font-weight: bold;
+    /* text-decoration-style: dotted; */
+}
+
+a:hover {
+    color: #eee;
+    background-color: #a33;
+    
+}
+
+hr {
+	clear: both;
+}
+
+/* search tells me this doesn't work for nesting within an anchor tag... */
+/*
+.external-mark {
+    text-decoration: none;
+}
+*/
+
+.item, .item__details {
+	clear: both;
+    margin: 1rem auto;
+}
+
+.item__main {
+    float: left;
+}
+
+.item__secondary {
+    float: right;
+    text-align: right;
+}
+
+
+/* responsive stuff */
+
+/* 2 rows of 3 and 2 links */
+@media (min-width: 35rem) and (max-width: 47rem) {
+    nav .internal-links, nav .external-links {
+        display: block;
+    }
+}
+
+/* 3 rows of 2/2/1 links and 6 rows of 1 link each: automatically done with narrow enough screens */
+
+/* nothing breaks with my floats on narrow screens, but it looks bad, so... */
+@media (max-width: 35rem) {
+    .item__main, .item__when-where {
+        float: none;
+    }
+}
