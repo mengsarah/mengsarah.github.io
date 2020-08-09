@@ -15,9 +15,8 @@
 
 body {
     background-color: #fafafa; /* fallback */
-    background: linear-gradient(to bottom, #fafafa 0%, #fafafa 75%, #ddd 100%) fixed;
     font-family: 'Segoe UI', Calibri, sans-serif;
-    margin: 0; /* to make nav and hr touch page sides */
+    margin: 0.5rem 0; /* to make nav and hr touch page sides */
 }
 
 main {
